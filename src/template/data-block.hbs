@@ -1,0 +1,19 @@
+{{#each this}}
+<p class="data__day">{{dt}}</p>
+<div class="data__wrapper">
+    <div class="data__day--month">
+        <span class="month">{{}}</span>
+        <span class="time">{{}}</span>
+    </div>
+    <div class="data__sun">
+        <div class="sunrise">
+            <img src="" alt="sunrise" class="sunrise__icon">
+            <span class="sunrise__time">{{sunrise}}</span>
+        </div>
+        <div class="sunset">
+            <img src="" alt="sunset" class="sunset__icon">
+            <span class="sunset__time">{{sunset}}</span>
+        </div>
+    </div>
+</div>
+{{/each}}
