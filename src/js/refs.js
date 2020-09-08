@@ -3,4 +3,5 @@ export default {
   bookmarkRef: document.querySelector('.main__bookmarks'),
   bookmarkBtnRef: document.querySelector('.main__bookmarkBtn'),
   dataBlockRef: document.querySelector('.data'),
+  fiveDaysRef: document.querySelector('.five__days'),
 };
