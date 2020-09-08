@@ -9,5 +9,4 @@ export default [
   'And about the weather. It is time to build the ark',
   'There is no bad weather, there is a bad mood.',
   'There are two types of weather: just the weather and hell knows what is this?).',
-  'Я ебал собак',
 ];
