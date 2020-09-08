@@ -29,8 +29,29 @@
     font-family: 'latoItalic';
     color: white;
     text-align: right;
+    animation: anim 9s infinite reverse;
+    animation-iteration-count: infinite;
     @include tablet-media {
       font-size: 22px;
     }
+  }
+}
+
+@keyframes anim {
+  0% {
+    opacity: 1;
+    filter: blur(20px);
+  }
+  10% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  90% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(20px);
   }
 }
