@@ -6,7 +6,7 @@ export default {
       const params = `?q=${request}&units=metric&appid=${this.keyApi}`;
       return fetch(baseUrl + params)
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then(data => data)
         .catch(err => err)
     },
     };

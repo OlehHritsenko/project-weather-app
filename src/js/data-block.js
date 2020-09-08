@@ -1,7 +1,9 @@
-import refs from './refs';
-import dataBlockTpl from '../template/data-block.hbs';
+// import forecastData from './fetchWeatherData.js';
+// import refs from './refs.js';
+// import dataBlock from './../template/data-block.hbs';
 
-export function dataBlokMarkup(city) {
-  const markup = dataBlockTpl(city);
-  refs.dataBlockRef.insertAdjacentHTML('beforeend', markup);
-}
+// console.log(forecastData.getForecast('london'));
+
+// export default function createDateBlock(city){
+//     refs.dataBlockRef.innerHTML(dataBlock(city));
+// }
