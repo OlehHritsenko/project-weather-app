@@ -5,5 +5,10 @@
 
 // Стили для файла с примером HTML-фрагмента
 @import 'helpers/fonts.scss';
+@import 'helpers/variables.scss';
 @import 'helpers/mixins.scss';
-@import 'comments.scss';
+@import 'normalize.scss';
+@import 'base.scss';
+//COMPONENTS
+@import 'components/comments.scss';
+@import 'components/data.scss';
