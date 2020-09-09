@@ -5,6 +5,8 @@ import forecastForFiveDays from './fetchWeatherDataWeek.js';
 import dateBlock from './createDateBlock.js';
 import {groupByDate} from './groupByDateFunction.js';
 
+//Блок з датою, світанком та заходом сонця
+
 refs.inputRef.addEventListener('submit', e => {
   e.preventDefault();
   const searchValue = e.currentTarget.elements.search.value;
@@ -12,38 +14,42 @@ refs.inputRef.addEventListener('submit', e => {
   //   forecastData.request = searchValue;
   //   dateBlock(city);
   //   });
-
-
 });
 
+// Блок з прогнозом погоди на 5 днів
 
 forecastForFiveDays.getForecastFiveDays('london').then(forecast =>{
-  // console.log(forecast.list);
   const arrData = forecast.list;
 const newArr = groupByDate(arrData);
+newArr.length = 5;
 console.log(newArr);
-// const values = Object.values(...newArr[0])[1].temp_min;
-// console.log(values);
+
 newArr.map(el => {
-  console.log(el);
- 
-  const values = Object.values(...newArr[0])[1].temp_min;
-  let minTempArr = [];
-  // console.log(values);
+  let value;
+  for (value of el){
+    Object.values(...newArr[0])[1];
+  }
+
+const dateOfFiveDays = {
+    day: new Date(value.dt*1000).toLocaleString('en', {weekday: 'long'}),
+    date: new Date(value.dt*1000).getDate(),
+    weather: value.weather[0].icon,
+    minTemperature: value.main.temp_min,
+    maxTemperature: value.main.temp_max,
+    forecast: [{
+      time: new Date(value.dt*1000).getTime(),
+      // weather: string,
+      // pressure: num,
+      // humidity: num,
+      // wind: num
+    }]
+    }
+console.table(dateOfFiveDays);
+console.table(dateOfFiveDays.forecast);
+
+// console.log(values);
 // console.log(minTempArr.push(values));
 });
 
 
-// console.log(newArr);
-// newArr.forEach(element => {
-//   const minTemp = element;
-//   console.log(minTemp);
-//   const array = [];
-
-//   // function arrayMin(arr) {
-//   //   return arr.reduce(function (p, v) {
-//   //     return ( p < v ? p : v );
-//   //   });
-//   // }  
-// });
 });
