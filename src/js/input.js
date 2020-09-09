@@ -4,13 +4,15 @@ import forecastData from './fetchWeatherData.js';
 import forecastForFiveDays from './fetchWeatherDataWeek.js';
 import dateBlock from './createDateBlock.js';
 import { groupByDate } from './groupByDateFunction.js';
+import backImg from './backgroundImage.js';
 
 
 refs.inputRef.addEventListener('submit', e => {
   e.preventDefault();
-  
-//Блок з датою, світанком та заходом сонця
+  const searchValue = e.currentTarget.elements.search.value;
 
+//Блок з датою, світанком та заходом сонця
+  
   forecastData.getForecast(searchValue).then(city => {
     forecastData.request = searchValue;
     dateBlock(city);
@@ -50,4 +52,14 @@ refs.inputRef.addEventListener('submit', e => {
       };
     });
   });
+
+
+  // Додавання рандомної картинки на бекграунд
+
+  console.log(backImg.getImage(searchValue).then(image =>{
+    const randomImage = image[Math.floor(Math.random() * image.length)].largeImageURL;
+    console.log(refs.weatherBlock.style.backgroundImage = `url(${randomImage})`);
+    }));
 });
+
+
