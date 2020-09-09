@@ -8,8 +8,7 @@ import { groupByDate } from './groupByDateFunction.js';
 
 refs.inputRef.addEventListener('submit', e => {
   e.preventDefault();
-  const searchValue = e.currentTarget.elements.search.value;
-
+  
 //Блок з датою, світанком та заходом сонця
 
   forecastData.getForecast(searchValue).then(city => {
