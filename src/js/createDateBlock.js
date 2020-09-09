@@ -10,7 +10,6 @@ export default function dateBlock(city) {
     const sunriseMinutes = new Date(city.sys.sunrise).getMinutes();
     const sunsetHours = new Date(city.sys.sunset).getHours();
     const sunsetMinutes = new Date(city.sys.sunset).getMinutes(); 
-    console.log(sunriseHours);
     refs.dataBlockRef.innerHTML = `<p class="data__day">${date}th ${day}</p>
     <div class="data__wrapper">
         <div class="data__day--month">

@@ -3,6 +3,7 @@ import './fetchWeatherData.js';
 import forecastData from './fetchWeatherData.js';
 import forecastForFiveDays from './fetchWeatherDataWeek.js';
 import dateBlock from './createDateBlock.js';
+import {groupByDate} from './groupByDateFunction.js';
 
 refs.inputRef.addEventListener('submit', e => {
   e.preventDefault();
@@ -17,15 +18,32 @@ refs.inputRef.addEventListener('submit', e => {
 
 
 forecastForFiveDays.getForecastFiveDays('london').then(forecast =>{
-  console.log(forecast.list);
-  const arr = forecast.list;
-  const newArr = [];
-  arr.forEach(el =>{
-    const date = new Date(el.dt*1000).getDate();
-    const month = new Date(el.dt*1000).getMonth();
-    const year = new Date(el.dt*1000).getFullYear();
-    const fullDate = `${date}${month}${year}`;
-    
-    
-  })
+  // console.log(forecast.list);
+  const arrData = forecast.list;
+const newArr = groupByDate(arrData);
+console.log(newArr);
+// const values = Object.values(...newArr[0])[1].temp_min;
+// console.log(values);
+newArr.map(el => {
+  console.log(el);
+ 
+  const values = Object.values(...newArr[0])[1].temp_min;
+  let minTempArr = [];
+  // console.log(values);
+// console.log(minTempArr.push(values));
+});
+
+
+// console.log(newArr);
+// newArr.forEach(element => {
+//   const minTemp = element;
+//   console.log(minTemp);
+//   const array = [];
+
+//   // function arrayMin(arr) {
+//   //   return arr.reduce(function (p, v) {
+//   //     return ( p < v ? p : v );
+//   //   });
+//   // }  
+// });
 });
