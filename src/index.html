@@ -5,17 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather APP</title>
   </head>
-  <body class="weather">
+  <body>
     <main>
-    <include src="./template/input.html"></include>
+      <div class="background-image">
+        <div class="container">
+          <include src="./template/input.html"></include>
+
 
     <ul class="main__bookmarks"></ul>
-    <button class="main__bookmarkBtn">bookmark</button>
     <include src="./template/todayTemperature.html"></include>
     <include src="./template/fiveDayTemplate.html"></include>
     <include src="./template/coments.html"></include>
     <div class="data"></div>
   </main>
+
     <script src="./index.js"></script>
   </body>
 </html>

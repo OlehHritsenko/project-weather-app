@@ -1,13 +1,12 @@
 import refs from './refs.js';
 import './fetchWeatherData.js';
 import forecastData from './fetchWeatherData.js';
-import forecastForFiveDays from './fetchWeatherDataWeek.js';
 import dateBlock from './createDateBlock.js';
 import { groupByDate } from './groupByDateFunction.js';
 import oneDayTemplate from './oneDayTemplate';
 import backImg from './backgroundImage.js';
 
-
+export function handleInput(){
 refs.inputRef.addEventListener('submit', e => {
   e.preventDefault();
   const searchValue = e.currentTarget.elements.search.value;
@@ -19,10 +18,9 @@ refs.inputRef.addEventListener('submit', e => {
     dateBlock(city);
   });
 
-
   // Блок з прогнозом погоди на 5 днів
 
-  forecastForFiveDays.getForecastFiveDays(searchValue).then(forecast => {
+  forecastData.getForecastFiveDays(searchValue).then(forecast => {
     const arrData = forecast.list;
     const newArr = groupByDate(arrData);
     newArr.length = 5;
@@ -58,9 +56,10 @@ refs.inputRef.addEventListener('submit', e => {
 
   // Додавання рандомної картинки на бекграунд
 
-  console.log(backImg.getImage(searchValue).then(image =>{
+  backImg.getImage(searchValue).then(image =>{
     const randomImage = image[Math.floor(Math.random() * image.length)].largeImageURL;
     console.log(refs.weatherBlock.style.backgroundImage = `url(${randomImage})`);
-    }));
+    });
 
   });
+}
