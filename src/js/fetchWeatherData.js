@@ -9,5 +9,32 @@ export default {
         .then(data => data)
         .catch(err => err)
     },
+
+    getForecastFiveDays(request) {
+      const baseUrl = 'http://api.openweathermap.org/data/2.5/forecast';
+      const params = `?q=${request}&units=metric&appid=${this.keyApi}`;
+      return fetch(baseUrl + params)
+        .then(resp => resp.json())
+        .then(data => data)
+        .catch(err => err)
+    },
+
+    getForecastByCurrentPosition(lat, lon) {
+      const baseUrl = 'http://api.openweathermap.org/data/2.5/weather';
+      const params = `?lat=${lat}&lon=${lon}&units=metric&appid=${this.keyApi}`;
+      return fetch(baseUrl + params)
+        .then(resp => resp.json())
+        .then(data => data)
+        .catch(err => err)
+    },
+
+    getForecastFiveDaysByCurrentPosition(lat, lon) {
+      const baseUrl = 'http://api.openweathermap.org/data/2.5/forecast';
+      const params = `?lat=${lat}&lon=${lon}&units=metric&appid=${this.keyApi}`;
+      return fetch(baseUrl + params)
+        .then(resp => resp.json())
+        .then(data => data)
+        .catch(err => err)
+    },
     };
 

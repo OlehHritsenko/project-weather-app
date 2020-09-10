@@ -30,11 +30,23 @@
     "handlebars-layouts": "^3.1.4",
     "handlebars-wax": "^6.1.0",
     "parcel-bundler": "^1.12.4",
+
     "parcel-plugin-handlebars": "^0.4.4",
+
+    "parcel-plugin-handlebars-precompile": "^1.0.2",
+    "parcel-plugin-hbs": "^1.1.2",
+
     "posthtml-include": "^1.4.3",
     "sass": "^1.26.9"
   },
   "dependencies": {
+
     "lodash": "^4.17.20"
+
+    "handlebars": "^4.7.6",
+    "handlebars-helpers": "^0.10.0",
+    "lodash": "^4.17.20",
+    "parcel-plugin-handlebars": "^0.4.4"
+
   }
 }
