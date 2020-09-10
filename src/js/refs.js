@@ -10,4 +10,5 @@ export default {
   todayTemperature: document.getElementById('todayTemperature'),
   todayMinTemperature: document.getElementById('todayMinTemperature'),
   todayMaxTemperature: document.getElementById('todayMaxTemperature'),
+  weatherBlock: document.querySelector('.weather'),
 };
