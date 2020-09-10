@@ -18,7 +18,7 @@ refs.inputRef.addEventListener('submit', e => {
     forecastData.request = searchValue;
     dateBlock(city);
   });
-});
+
 
   // Блок з прогнозом погоди на 5 днів
 
@@ -62,5 +62,5 @@ refs.inputRef.addEventListener('submit', e => {
     const randomImage = image[Math.floor(Math.random() * image.length)].largeImageURL;
     console.log(refs.weatherBlock.style.backgroundImage = `url(${randomImage})`);
     }));
-});
 
+  });
