@@ -4,19 +4,21 @@ import forecastData from './fetchWeatherData.js';
 import forecastForFiveDays from './fetchWeatherDataWeek.js';
 import dateBlock from './createDateBlock.js';
 import { groupByDate } from './groupByDateFunction.js';
+import oneDayTemplate from './oneDayTemplate';
 import backImg from './backgroundImage.js';
 
 
 refs.inputRef.addEventListener('submit', e => {
   e.preventDefault();
   const searchValue = e.currentTarget.elements.search.value;
-
 //Блок з датою, світанком та заходом сонця
   
+  oneDayTemplate(searchValue);
   forecastData.getForecast(searchValue).then(city => {
     forecastData.request = searchValue;
     dateBlock(city);
-    });
+  });
+});
 
   // Блок з прогнозом погоди на 5 днів
 
@@ -61,5 +63,4 @@ refs.inputRef.addEventListener('submit', e => {
     console.log(refs.weatherBlock.style.backgroundImage = `url(${randomImage})`);
     }));
 });
-
 
